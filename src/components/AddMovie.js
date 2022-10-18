@@ -22,7 +22,7 @@ const AddMovie = ({MovieData, setMovieData}) => {
     }
   return (
     <>
-    <Button onClick={() => setLgShow(true)}>Add Movie</Button>
+    <Button onClick={() => setLgShow(true)} id="btn-add">Add Movie</Button>
     <Modal
       size="lg"
       show={lgShow}
