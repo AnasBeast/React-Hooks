@@ -8,13 +8,16 @@ const AddMovie = ({MovieData, setMovieData}) => {
     const [movieTitle, setMovieTitle] = useState("");
     const [movieDescription, setMovieDescription] = useState("");
     const [moviePoster, setMoviePoster] = useState("");
+    const [movieTrailer, setMovieTrailer] = useState("");
     const [movieRating, setMovieRating] = useState("");
     const handleClick = ()=>{
         var Movie = [{
             title: movieTitle,
             description: movieDescription,
             posterUrl: moviePoster,
+            trailerUrl : movieTrailer,
             rating: movieRating,
+            id: Math.random()
         }]
         var Movies = [...MovieData,...Movie]
         setMovieData(Movies)
@@ -22,7 +25,7 @@ const AddMovie = ({MovieData, setMovieData}) => {
     }
   return (
     <>
-    <Button onClick={() => setLgShow(true)}>Add Movie</Button>
+    <Button onClick={() => setLgShow(true)} id="btn-add">Add Movie</Button>
     <Modal
       size="lg"
       show={lgShow}
@@ -48,6 +51,10 @@ const AddMovie = ({MovieData, setMovieData}) => {
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Movie Poster</Form.Label>
                 <Form.Control type="text" placeholder="Enter movie poster" onChange={(e)=>setMoviePoster(e.target.value)}/>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Label>Movie Trailer</Form.Label>
+                <Form.Control type="text" placeholder="Enter movie trailer link." onChange={(e)=>setMovieTrailer(e.target.value)}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Movie Rating</Form.Label>

@@ -2,6 +2,7 @@ import React from 'react'
 import {Navbar,Nav,Container,Form,Button} from "react-bootstrap"
 import StarRatingComponent from 'react-star-rating-component';
 import AddMovie from './AddMovie';
+import './styles.css'
 
 const Navigation = (props) => {
     const handeRating = (nextValue ,prevValue, name)=>{
@@ -9,9 +10,9 @@ const Navigation = (props) => {
         
     }
     return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="black" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Gomyode Movies</Navbar.Brand>
+        <Navbar.Brand href="/">Gomyode Movies</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll" >
           <Nav
@@ -19,9 +20,9 @@ const Navigation = (props) => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Film</Nav.Link>
-            <Nav.Link href="#action2">Series</Nav.Link>
+            <Nav.Link href="#">Home</Nav.Link>
+            <Nav.Link href="#">Film</Nav.Link>
+            <Nav.Link href="#">Series</Nav.Link>
             <Nav.Link href="#">
               Anime
             </Nav.Link>
@@ -40,9 +41,9 @@ const Navigation = (props) => {
               aria-label="Search"
               onChange={(e)=>props.search(e.target.value)}
             />
-            <Button variant="outline-primary">Search</Button>
+            <Button variant="outline-primary" id="btn-search">Search</Button>
           </Form>
-          <AddMovie MovieData={props.MovieData} setMovieData={props.setMovieData}/>
+          <AddMovie MovieData={props.MovieData} setMovieData={props.setMovieData} />
         </Navbar.Collapse>
       </Container>
     </Navbar>
